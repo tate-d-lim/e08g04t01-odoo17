@@ -9,7 +9,7 @@ pool:
 
 variables:
   repoUrl: 'https://github.com/souravb-smu/odoo17.git'
-  stagePath: '/home/azureuser/'
+  stagePath: '/home/azureuser'
   updateScript: '$(stagePath)/deploy-temp/update_code.sh'
   dbName: 'odoo'
   dbUser: 'odoo17'
@@ -114,9 +114,9 @@ stages:
                 export PGPASSWORD=$(DB_PASSWORD)
                 cd $(stagePath)/deploy-temp
                 echo "Dropping database if exists..."
-                psql -U $(dbUser) -d postgres -c "DROP DATABASE IF EXISTS $(dbName);"
+                psql -U $(dbUser) -d postgres -c 'DROP DATABASE IF EXISTS $(dbName);'
                 echo "Creating database..."
-                psql -U $(dbUser) -d postgres -c "CREATE DATABASE $(dbName) OWNER $(dbUser);"
+                psql -U $(dbUser) -d postgres -c 'CREATE DATABASE $(dbName) OWNER $(dbUser);'
                 echo "Restoring database from uncompressed SQL..."
                 psql -U $(dbUser) -d $(dbName) -f odoo.sql
                 echo "Database restore completed!"
