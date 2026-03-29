@@ -9,8 +9,8 @@ pool:
 
 variables:
   repoUrl: 'https://github.com/tate-d-lim/e08g04t01-odoo17.git'
-  updateScript: '/home/azureuser/deploy-temp/update_code.sh'
-  stagePath: '/home/azureuser/'
+  updateScript: '/home/is214/deploy-temp/update_code.sh'
+  stagePath: '/home/is214/'
 
 stages:
 
