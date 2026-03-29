@@ -55,8 +55,8 @@ stages:
               sshEndpoint: 'ssh-odoo17-staging'
               runOptions: commands
               commands: |
-                echo "$(STAGINGUSERPASSWORD)" | sudo -S -p '' chmod +x $(updateScript)
-                echo "$(STAGINGUSERPASSWORD)" | sudo -S -p '' $(updateScript)
+                sudo chmod +x $(updateScript)
+                sudo $(updateScript)
 
 
 # =========================
@@ -100,5 +100,5 @@ stages:
               sshEndpoint: 'ssh-odoo17-prod'
               runOptions: commands
               commands: |
-                echo "$(STAGINGUSERPASSWORD)" | sudo -S -p '' chmod +x $(updateScript)
-                echo "$(STAGINGUSERPASSWORD)" | sudo -S -p '' $(updateScript)
+                sudo chmod +x $(updateScript)
+                sudo $(updateScript)
