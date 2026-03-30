@@ -13,7 +13,7 @@ sudo chown -R is214:is214 ${ADDONS_DEST}
 
 echo "[3] Restart Odoo container"
 cd ${COMPOSE_DIR}
-sudo docker compose restart odoo
+sudo docker compose restart odoo 2>/dev/null || true
 
 echo "[4] Verify containers running"
 sudo docker ps
