@@ -43,3 +43,5 @@
     "application": True,
     "installable": True,
 }
+
+THIS_IS_A_DELIBRATE_SYNTAX_ERROR_FOR_ROLLBACK_DRLL
